@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Paws Breeders | Healthy, Happy Puppies</title>
+<meta name="description" content="Find your perfect companion. Ethically bred, health-checked puppies raised with love. Browse available puppies and inquire today.">
+<meta name="keywords" content="puppies for sale, ethical breeder, healthy puppies, golden retriever, labrador puppies">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf8f2;
+    --warm-white: #fffcf8;
+    --brown-light: #e8d5b7;
+    --brown-mid: #c4a882;
+    --brown-dark: #8b6914;
+    --brown-deep: #5c4008;
+    --blue-soft: #d4e8f0;
+    --blue-mid: #7db8cc;
+    --blue-accent: #4a9cb5;
+    --text-dark: #2c2018;
+    --text-mid: #6b5040;
+    --text-light: #a08060;
+    --success: #6ba86b;
+    --radius: 18px;
+    --radius-sm: 10px;
+    --shadow: 0 4px 24px rgba(140,100,20,0.10);
+    --shadow-lg: 0 12px 48px rgba(140,100,20,0.16);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--brown-light);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(140,100,20,0.07);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--brown-deep);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo-paw { font-size: 1.6rem; }
+
+  .nav-links {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-mid);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    border-radius: 30px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .nav-links a:hover, .nav-links a.active {
+    background: var(--brown-light);
+    color: var(--brown-deep);
+  }
+
+  .nav-cta {
+    background: var(--brown-dark) !important;
+    color: white !important;
+    padding: 9px 20px !important;
+  }
+
+  .nav-cta:hover { background: var(--brown-deep) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--brown-deep);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* ===== PAGES ===== */
+  .page { display: none; animation: fadeIn 0.4s ease; }
+  .page.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary {
+    background: var(--brown-dark);
+    color: white;
+    box-shadow: 0 4px 16px rgba(139,105,20,0.3);
+  }
+
+  .btn-primary:hover {
+    background: var(--brown-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(139,105,20,0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--brown-deep);
+    border: 2px solid var(--brown-mid);
+  }
+
+  .btn-secondary:hover {
+    background: var(--brown-light);
+    border-color: var(--brown-dark);
+    transform: translateY(-2px);
+  }
+
+  .btn-blue {
+    background: var(--blue-accent);
+    color: white;
+    box-shadow: 0 4px 16px rgba(74,156,181,0.3);
+  }
+
+  .btn-blue:hover {
+    background: #3a8aa0;
+    transform: translateY(-2px);
+  }
+
+  .btn-sm {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    padding: 80px 5% 80px 8%;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--blue-soft);
+    color: var(--blue-accent);
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    color: var(--brown-deep);
+    margin-bottom: 20px;
+    max-width: 520px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--brown-dark);
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+    color: var(--text-mid);
+    max-width: 440px;
+    margin-bottom: 36px;
+    font-weight: 400;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .hero-trust {
+    display: flex;
+    gap: 24px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    font-weight: 500;
+  }
+
+  .trust-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--brown-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .hero-image {
+    height: 88vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-image-bg {
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(212,232,240,0.6) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 70%, rgba(232,213,183,0.8) 0%, transparent 50%),
+      linear-gradient(145deg, #f5e9d5 0%, #e8d5b7 40%, #d4c49a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-puppy-illustration {
+    font-size: 12rem;
+    filter: drop-shadow(0 20px 40px rgba(140,100,20,0.2));
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-16px); }
+  }
+
+  .hero-bubbles {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+  }
+
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.35;
+  }
+
+  .bubble-1 { width: 80px; height: 80px; background: var(--brown-light); top: 15%; left: 10%; animation: drift 6s ease-in-out infinite; }
+  .bubble-2 { width: 50px; height: 50px; background: var(--blue-soft); top: 60%; right: 15%; animation: drift 8s ease-in-out infinite reverse; }
+  .bubble-3 { width: 35px; height: 35px; background: var(--brown-mid); bottom: 20%; left: 20%; animation: drift 5s ease-in-out infinite 2s; }
+
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -15px); }
+  }
+
+  /* ===== FEATURES STRIP ===== */
+  .features-strip {
+    background: var(--brown-deep);
+    color: white;
+    padding: 28px 8%;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .feature-item span:first-child { font-size: 1.3rem; }
+
+  /* ===== SECTIONS ===== */
+  section {
+    padding: 80px 8%;
+  }
+
+  .section-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-accent);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--brown-deep);
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 540px;
+    margin-bottom: 48px;
+  }
+
+  /* ===== PUPPY GRID ===== */
+  .puppies-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+
+  .filter-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-mid);
+  }
+
+  select {
+    padding: 10px 18px;
+    border: 2px solid var(--brown-light);
+    border-radius: 30px;
+    background: white;
+    color: var(--text-dark);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+    padding-right: 36px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b6914' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+  }
+
+  select:focus { border-color: var(--brown-dark); }
+
+  .puppy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+  }
+
+  .puppy-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .puppy-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .puppy-card-img {
+    height: 220px;
+    background: linear-gradient(135deg, #f0e4cc 0%, #e0cfb0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .puppy-card-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to top, white, transparent);
+  }
+
+  .puppy-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--success);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .puppy-card-body {
+    padding: 20px;
+  }
+
+  .puppy-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--brown-deep);
+    margin-bottom: 4px;
+  }
+
+  .puppy-breed {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+
+  .puppy-meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .meta-chip {
+    background: var(--cream);
+    border: 1px solid var(--brown-light);
+    color: var(--text-mid);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  .puppy-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--brown-dark);
+    margin-bottom: 16px;
+  }
+
+  /* ===== DETAIL PAGE ===== */
+  .detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-mid);
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 32px;
+    padding: 8px 0;
+    transition: color 0.2s;
+    font-size: 0.95rem;
+  }
+
+  .detail-back:hover { color: var(--brown-dark); }
+
+  .detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .detail-gallery {
+    position: sticky;
+    top: 90px;
+  }
+
+  .detail-main-img {
+    height: 380px;
+    background: linear-gradient(135deg, #f0e4cc 0%, #e0cfb0 100%);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+  }
+
+  .detail-thumbs {
+    display: flex;
+    gap: 10px;
+  }
+
+  .detail-thumb {
+    flex: 1;
+    height: 80px;
+    background: linear-gradient(135deg, #ecdfc8 0%, #ddd0b0 100%);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .detail-thumb.active, .detail-thumb:hover {
+    border-color: var(--brown-dark);
+  }
+
+  .detail-info h1 {
+    font-size: 2.2rem;
+    color: var(--brown-deep);
+    margin-bottom: 4px;
+  }
+
+  .detail-breed-tag {
+    font-size: 0.9rem;
+    color: var(--blue-accent);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .detail-chips {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .detail-chip {
+    background: var(--cream);
+    border: 2px solid var(--brown-light);
+    border-radius: var(--radius-sm);
+    padding: 10px 16px;
+    text-align: center;
+  }
+
+  .chip-label {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    display: block;
+  }
+
+  .chip-val {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: block;
+  }
+
+  .detail-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brown-dark);
+    margin: 20px 0;
+  }
+
+  .detail-section {
+    margin-bottom: 28px;
+  }
+
+  .detail-section h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .detail-section p {
+    color: var(--text-mid);
+    font-size: 0.98rem;
+  }
+
+  .vax-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .vax-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.92rem;
+    color: var(--text-mid);
+  }
+
+  .vax-list li::before {
+    content: '✓';
+    color: var(--success);
+    font-weight: 700;
+    width: 18px;
+  }
+
+  /* ===== INQUIRY FORM ===== */
+  .inquiry-form, .contact-form {
+    background: white;
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    margin-top: 28px;
+  }
+
+  .inquiry-form h3, .contact-form h3 {
+    font-size: 1.4rem;
+    color: var(--brown-deep);
+    margin-bottom: 6px;
+  }
+
+  .form-sub {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    margin-bottom: 24px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    margin-bottom: 6px;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--brown-light);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  input:focus, textarea:focus {
+    border-color: var(--brown-dark);
+    box-shadow: 0 0 0 3px rgba(139,105,20,0.1);
+  }
+
+  textarea { resize: vertical; min-height: 110px; }
+
+  .form-success {
+    background: #f0f8f0;
+    border: 2px solid var(--success);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    text-align: center;
+    color: #2d7a2d;
+    font-weight: 600;
+    display: none;
+    font-size: 0.95rem;
+  }
+
+  /* ===== ABOUT PAGE ===== */
+  .about-hero {
+    background: linear-gradient(135deg, var(--brown-deep) 0%, #8b6914 100%);
+    color: white;
+    padding: 80px 8%;
+    text-align: center;
+  }
+
+  .about-hero h1 { color: white; font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; }
+  .about-hero p { color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto; font-size: 1.1rem; }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 80px 8%;
+  }
+
+  .about-img-block {
+    height: 400px;
+    background: linear-gradient(135deg, #f0e4cc 0%, #ddd0b0 100%);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10rem;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .about-text h2 {
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    color: var(--brown-deep);
+    margin-bottom: 20px;
+  }
+
+  .about-text p {
+    color: var(--text-mid);
+    margin-bottom: 16px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0 8% 80px;
+  }
+
+  .value-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    border-top: 4px solid var(--brown-mid);
+    transition: transform 0.2s;
+  }
+
+  .value-card:hover { transform: translateY(-4px); }
+
+  .value-icon {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .value-card h3 {
+    font-size: 1.05rem;
+    color: var(--brown-deep);
+    margin-bottom: 8px;
+  }
+
+  .value-card p {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .trust-bar {
+    background: var(--blue-soft);
+    padding: 48px 8%;
+  }
+
+  .trust-bar h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--brown-deep);
+    margin-bottom: 32px;
+  }
+
+  .trust-items {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .trust-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    max-width: 220px;
+  }
+
+  .trust-block-icon {
+    width: 44px;
+    height: 44px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    box-shadow: var(--shadow);
+  }
+
+  .trust-block h4 {
+    font-size: 0.95rem;
+    color: var(--brown-deep);
+    margin-bottom: 4px;
+  }
+
+  .trust-block p {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  /* ===== CONTACT PAGE ===== */
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 60px;
+    align-items: start;
+    padding: 80px 8%;
+  }
+
+  .contact-info h2 {
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    color: var(--brown-deep);
+    margin-bottom: 12px;
+  }
+
+  .contact-info p {
+    color: var(--text-mid);
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  .contact-detail {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .contact-detail-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--brown-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .contact-detail h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 3px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .contact-detail p { color: var(--text-dark); margin-bottom: 0; font-weight: 500; font-size: 0.95rem; }
+
+  .response-badge {
+    background: var(--blue-soft);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    font-size: 0.88rem;
+    color: var(--blue-accent);
+    font-weight: 600;
+  }
+
+  .response-badge span:first-child { font-size: 1.4rem; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--brown-deep);
+    color: rgba(255,255,255,0.8);
+    padding: 48px 8% 32px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-brand .logo { color: white; margin-bottom: 12px; }
+
+  .footer-brand p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    max-width: 280px;
+  }
+
+  .footer-col h4 {
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: white; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials {
+    background: white;
+    padding: 80px 8%;
+    text-align: center;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .testimonial-card {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: left;
+    border: 1px solid var(--brown-light);
+  }
+
+  .stars {
+    color: #f5b400;
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+  }
+
+  .testimonial-puppy {
+    font-size: 0.82rem;
+    color: var(--text-light);
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-image { height: 300px; }
+    .hero-content { padding: 60px 6%; }
+    .detail-layout, .about-grid { grid-template-columns: 1fr; }
+    .values-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .contact-layout { grid-template-columns: 1fr; padding: 40px 6%; }
+    .footer-top { grid-template-columns: 1fr; }
+    section { padding: 60px 6%; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 700px) {
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: var(--warm-white); padding: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-top: 1px solid var(--brown-light); }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+    .features-strip { gap: 24px; padding: 20px 6%; }
+    .about-grid { padding: 40px 6%; }
+    .values-grid { padding: 0 6% 60px; }
+    .trust-items { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo" onclick="showPage('home')">
+    <span class="logo-paw">🐾</span>
+    Golden Paws
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a onclick="showPage('puppies')" id="nav-puppies">Available Puppies</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ===== HOME PAGE ===== -->
+<div class="page active" id="page-home">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🏡 Family Breeder Since 2010</div>
+      <h1>Healthy, Happy Puppies Looking for <em>Loving Homes</em></h1>
+      <p class="hero-desc">Every puppy is health-checked by a licensed vet, raised in our family home, and ready to become your forever companion.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" onclick="showPage('puppies')">View Available Puppies</button>
+        <button class="btn btn-secondary" onclick="showPage('contact')">Contact Us</button>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <div class="trust-icon">🩺</div>
+          <span>Vet Certified</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">💉</div>
+          <span>Vaccinated</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">❤️</div>
+          <span>Home Raised</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">📋</div>
+          <span>Health Guarantee</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-bg">
+        <div class="hero-bubbles">
+          <div class="bubble bubble-1"></div>
+          <div class="bubble bubble-2"></div>
+          <div class="bubble bubble-3"></div>
+        </div>
+        <div class="hero-puppy-illustration">🐶</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features strip -->
+  <div class="features-strip">
+    <div class="feature-item"><span>✓</span><span>AKC Registered Breeds</span></div>
+    <div class="feature-item"><span>✓</span><span>2-Year Health Guarantee</span></div>
+    <div class="feature-item"><span>✓</span><span>Lifetime Breeder Support</span></div>
+    <div class="feature-item"><span>✓</span><span>Microchipped & Dewormed</span></div>
+  </div>
+
+  <!-- Featured puppies preview -->
+  <section>
+    <div class="section-label">Currently Available</div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:16px;">
+      <div>
+        <h2 class="section-title">Meet Our Puppies</h2>
+        <p class="section-sub" style="margin-bottom:0;">Each puppy is unique, loved, and waiting to find their perfect family.</p>
+      </div>
+      <button class="btn btn-secondary btn-sm" onclick="showPage('puppies')">View All Puppies →</button>
+    </div>
+    <div class="puppy-grid" id="home-puppy-grid"></div>
+  </section>
+
+  <!-- Testimonials -->
+  <div class="testimonials">
+    <div class="section-label">Happy Families</div>
+    <h2 class="section-title">What Our Families Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"We couldn't be happier with our puppy from Golden Paws. He was healthy, socialized, and the breeder was so helpful throughout the whole process."</p>
+        <div class="testimonial-author">Sarah & Tom M.</div>
+        <div class="testimonial-puppy">Golden Retriever — Max</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The entire experience was transparent and warm. Our puppy came with all her records, had been vet-checked, and transitioned so smoothly into our home."</p>
+        <div class="testimonial-author">Jessica L.</div>
+        <div class="testimonial-puppy">Labrador — Daisy</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I was nervous about finding a reputable breeder but Golden Paws was incredible. They answered every question and even checked in after we brought our pup home."</p>
+        <div class="testimonial-author">Marcus & Priya K.</div>
+        <div class="testimonial-puppy">Beagle — Charlie</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== PUPPIES PAGE ===== -->
+<div class="page" id="page-puppies">
+  <section>
+    <div class="section-label">Browse & Inquire</div>
+    <h2 class="section-title">Available Puppies</h2>
+    <p class="section-sub">All puppies are vet-checked, vaccinated, and raised in our home. Inquire to reserve your spot.</p>
+    <div class="puppies-header">
+      <div class="filter-bar">
+        <span class="filter-label">Filter by breed:</span>
+        <select id="breedFilter" onchange="filterPuppies()">
+          <option value="all">All Breeds</option>
+          <option value="Golden Retriever">Golden Retriever</option>
+          <option value="Labrador">Labrador</option>
+          <option value="Beagle">Beagle</option>
+          <option value="French Bulldog">French Bulldog</option>
+          <option value="Poodle">Poodle</option>
+        </select>
+      </div>
+      <span style="font-size:0.88rem; color:var(--text-light);" id="puppy-count"></span>
+    </div>
+    <div class="puppy-grid" id="main-puppy-grid"></div>
+  </section>
+</div>
+
+<!-- ===== DETAIL PAGE ===== -->
+<div class="page" id="page-detail">
+  <section>
+    <div class="detail-back" onclick="showPage('puppies')">← Back to All Puppies</div>
+    <div class="detail-layout">
+      <div class="detail-gallery">
+        <div class="detail-main-img" id="detail-img">🐶</div>
+        <div class="detail-thumbs">
+          <div class="detail-thumb active">🐶</div>
+          <div class="detail-thumb">🏠</div>
+          <div class="detail-thumb">🌿</div>
+        </div>
+      </div>
+      <div class="detail-info">
+        <h1 id="detail-name">Puppy Name</h1>
+        <div class="detail-breed-tag" id="detail-breed-tag">Breed</div>
+        <div class="detail-chips" id="detail-chips"></div>
+        <div class="detail-price" id="detail-price">$0</div>
+
+        <div class="detail-section">
+          <h3>Personality</h3>
+          <p id="detail-personality">Loading...</p>
+        </div>
+
+        <div class="detail-section">
+          <h3>Health & Vaccinations</h3>
+          <ul class="vax-list" id="detail-vax"></ul>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+          <button class="btn btn-primary" onclick="scrollToForm()">Inquire About This Puppy</button>
+          <button class="btn btn-secondary btn-sm" onclick="showPage('contact')">Ask a Question</button>
+        </div>
+
+        <div class="inquiry-form" id="inquiry-form">
+          <h3>Send an Inquiry</h3>
+          <p class="form-sub">We'll get back to you within 24 hours.</p>
+          <div class="form-success" id="inquiry-success">
+            🐾 Thank you! We've received your inquiry and will be in touch within 24 hours.
+          </div>
+          <div id="inquiry-form-fields">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" placeholder="Your first name">
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" placeholder="Your last name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email *</label>
+                <input type="email" placeholder="your@email.com">
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" placeholder="(555) 000-0000">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Tell us about your family and home environment..."></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="submitForm('inquiry')">Send Inquiry 🐾</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<div class="page" id="page-about">
+  <div class="about-hero">
+    <div class="section-label" style="color:rgba(255,255,255,0.7);">Our Story</div>
+    <h1>Raising Puppies With Purpose & Love</h1>
+    <p>We believe every dog deserves the best start in life — and every family deserves a healthy, happy companion.</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-img-block">👨‍👩‍👧‍👦</div>
+    <div class="about-text">
+      <div class="section-label">Our Founder</div>
+      <h2>A Family Passion Turned Into a Calling</h2>
+      <p>My name is Margaret Wilson, and I've been raising dogs my entire life. What started as a family tradition of keeping golden retrievers in our farmhouse in Colorado has grown into a full-time calling.</p>
+      <p>Over 15 years ago, I noticed how hard it was for families to find puppies from breeders who truly prioritized health and temperament over profit. That's what drives everything we do at Golden Paws.</p>
+      <p>Every litter is planned carefully, socialized from day one, and health-tested before ever leaving our care. We don't just sell puppies — we match them with families we know will love them for life.</p>
+      <div style="margin-top:28px;">
+        <button class="btn btn-primary" onclick="showPage('puppies')">Meet Our Puppies</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="values-grid">
+    <div class="value-card">
+      <span class="value-icon">🏥</span>
+      <h3>Health First</h3>
+      <p>Every puppy is examined by our licensed vet before going home. We test for genetic conditions and provide full health documentation.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">🌱</span>
+      <h3>Ethical Breeding</h3>
+      <p>We limit litters per year to ensure quality over quantity. Our parent dogs are AKC registered, well-loved, and never over-bred.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">🏡</span>
+      <h3>Home Raised</h3>
+      <p>Puppies grow up inside our home with our family and children — not in kennels. Early socialization makes all the difference.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">📋</span>
+      <h3>Full Transparency</h3>
+      <p>We share complete health records, vaccination history, and vet reports with every family. No surprises, ever.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">🤝</span>
+      <h3>Lifetime Support</h3>
+      <p>We're here after the purchase too. Questions about training, diet, or health? We answer every message personally.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">💕</span>
+      <h3>Love Guaranteed</h3>
+      <p>If your life circumstances change and you can no longer keep the puppy, we always accept them back. No dog left behind.</p>
+    </div>
+  </div>
+
+  <div class="trust-bar">
+    <h2>Our Health Promise</h2>
+    <div class="trust-items">
+      <div class="trust-block">
+        <div class="trust-block-icon">🩺</div>
+        <div>
+          <h4>Vet Certified</h4>
+          <p>Full health check by a licensed vet before pick-up, with written certification provided.</p>
+        </div>
+      </div>
+      <div class="trust-block">
+        <div class="trust-block-icon">💉</div>
+        <div>
+          <h4>Age-Appropriate Vaccines</h4>
+          <p>All core vaccines administered on schedule, with records provided at pick-up.</p>
+        </div>
+      </div>
+      <div class="trust-block">
+        <div class="trust-block-icon">🧬</div>
+        <div>
+          <h4>Genetic Testing</h4>
+          <p>Parent dogs are tested for hereditary conditions relevant to their breed.</p>
+        </div>
+      </div>
+      <div class="trust-block">
+        <div class="trust-block-icon">🛡️</div>
+        <div>
+          <h4>2-Year Health Guarantee</h4>
+          <p>We stand behind the health of every puppy with a written 2-year guarantee.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONTACT PAGE ===== -->
+<div class="page" id="page-contact">
+  <div class="contact-layout">
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <h2>We'd Love to Hear From You</h2>
+      <p>Whether you have a question about a specific puppy or just want to learn more about our breeding program, we're happy to chat.</p>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div>
+          <h4>Location</h4>
+          <p>Fort Collins, Colorado</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📧</div>
+        <div>
+          <h4>Email</h4>
+          <p>hello@goldenpaws.com</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📱</div>
+        <div>
+          <h4>Phone / Text</h4>
+          <p>(970) 555-0182</p>
+        </div>
+      </div>
+
+      <div class="response-badge">
+        <span>⏱️</span>
+        <span>We typically respond within <strong>24 hours</strong>, often much sooner!</span>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <p class="form-sub">All fields marked * are required.</p>
+      <div class="form-success" id="contact-success">
+        🐾 Message sent! We'll be in touch within 24 hours.
+      </div>
+      <div id="contact-form-fields">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" placeholder="Your first name">
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" placeholder="Your last name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" placeholder="(555) 000-0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>I'm interested in... *</label>
+          <select style="width:100%; border-radius:var(--radius-sm); padding-right:36px;">
+            <option>A specific available puppy</option>
+            <option>Upcoming litters / waitlist</option>
+            <option>General questions about breeding</option>
+            <option>Health guarantee information</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea placeholder="Tell us about yourself and what you're looking for in a puppy..."></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="submitForm('contact')">Send Message 🐾</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">🐾 Golden Paws</div>
+      <p>Ethically bred, health-certified puppies raised with love in Fort Collins, Colorado. Matching families with their perfect companions since 2010.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('puppies')">Available Puppies</a>
+      <a onclick="showPage('about')">About Us</a>
+      <a onclick="showPage('contact')">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a>Fort Collins, Colorado</a>
+      <a>hello@goldenpaws.com</a>
+      <a>(970) 555-0182</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Golden Paws Breeders. All rights reserved.</span>
+    <span>Made with ❤️ for dog lovers</span>
+  </div>
+</footer>
+
+<script>
+// ===== DATA =====
+const puppies = [
+  { id: 1, name: "Butterscotch", breed: "Golden Retriever", age: "8 weeks", gender: "Female", price: "$1,800", emoji: "🐶", available: true, personality: "Butterscotch is the sweetest, most affectionate pup in the litter. She loves cuddles and is already learning basic commands. Perfect for families with children.", vaccinations: ["DHPP (6 weeks)", "Bordetella", "Vet health check ✓", "Dewormed 3x", "Microchipped"] },
+  { id: 2, name: "Biscuit", breed: "Golden Retriever", age: "8 weeks", gender: "Male", price: "$1,800", emoji: "🐕", available: true, personality: "Biscuit is the adventurous one of the group — always the first to explore new toys. He'll be a great companion for active families or someone who loves outdoor adventures.", vaccinations: ["DHPP (6 weeks)", "Bordetella", "Vet health check ✓", "Dewormed 3x", "Microchipped"] },
+  { id: 3, name: "Luna", breed: "Labrador", age: "10 weeks", gender: "Female", price: "$1,500", emoji: "🦴", available: true, personality: "Luna is calm and gentle — she's already great with kids and other dogs. A true family dog who loves nothing more than being in the same room as her people.", vaccinations: ["DHPP (8 weeks)", "Rabies", "Vet health check ✓", "Dewormed 4x", "Microchipped"] },
+  { id: 4, name: "Milo", breed: "Beagle", age: "9 weeks", gender: "Male", price: "$1,200", emoji: "🐩", available: true, personality: "Milo is playful, curious, and hilarious to watch. He's got the classic Beagle personality — nose always to the ground, tail always wagging. Loves to play fetch.", vaccinations: ["DHPP (6 weeks)", "Bordetella", "Vet health check ✓", "Dewormed 3x", "Microchipped"] },
+  { id: 5, name: "Coco", breed: "French Bulldog", age: "10 weeks", gender: "Female", price: "$2,800", emoji: "🐾", available: true, personality: "Coco is compact, charming, and totally in love with humans. She's quiet, adaptable, and ideal for apartment living. Already knows how to sit!", vaccinations: ["DHPP (6 weeks)", "Bordetella", "Vet health check ✓", "Dewormed 3x", "Microchipped"] },
+  { id: 6, name: "Teddy", breed: "Poodle", age: "8 weeks", gender: "Male", price: "$2,200", emoji: "🐕‍🦺", available: true, personality: "Teddy is brilliant and eager to please — he started responding to his name at 5 weeks. Hypoallergenic, non-shedding, and endlessly affectionate.", vaccinations: ["DHPP (6 weeks)", "Bordetella", "Vet health check ✓", "Dewormed 3x", "Microchipped"] },
+];
+
+let currentPuppy = null;
+
+// ===== RENDER =====
+function renderPuppyCard(puppy, onclick) {
+  return `
+    <div class="puppy-card" onclick="${onclick}">
+      <div class="puppy-card-img">
+        ${puppy.emoji}
+        ${puppy.available ? '<div class="puppy-badge">Available</div>' : ''}
+      </div>
+      <div class="puppy-card-body">
+        <div class="puppy-name">${puppy.name}</div>
+        <div class="puppy-breed">${puppy.breed}</div>
+        <div class="puppy-meta">
+          <span class="meta-chip">🗓 ${puppy.age}</span>
+          <span class="meta-chip">${puppy.gender === 'Male' ? '♂' : '♀'} ${puppy.gender}</span>
+        </div>
+        <div class="puppy-price">${puppy.price}</div>
+        <button class="btn btn-blue btn-sm" style="width:100%">Inquire About ${puppy.name}</button>
+      </div>
+    </div>`;
+}
+
+function renderGrid(containerId, puppyList) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  el.innerHTML = puppyList.map(p => renderPuppyCard(p, `openDetail(${p.id})`)).join('');
+}
+
+function filterPuppies() {
+  const val = document.getElementById('breedFilter').value;
+  const filtered = val === 'all' ? puppies : puppies.filter(p => p.breed === val);
+  renderGrid('main-puppy-grid', filtered);
+  document.getElementById('puppy-count').textContent = `${filtered.length} puppy${filtered.length !== 1 ? 'ies' : ''} found`;
+}
+
+function openDetail(id) {
+  currentPuppy = puppies.find(p => p.id === id);
+  if (!currentPuppy) return;
+  document.getElementById('detail-name').textContent = currentPuppy.name;
+  document.getElementById('detail-breed-tag').textContent = currentPuppy.breed;
+  document.getElementById('detail-price').textContent = currentPuppy.price;
+  document.getElementById('detail-personality').textContent = currentPuppy.personality;
+  document.getElementById('detail-img').textContent = currentPuppy.emoji;
+  document.getElementById('detail-chips').innerHTML = `
+    <div class="detail-chip"><span class="chip-label">Age</span><span class="chip-val">${currentPuppy.age}</span></div>
+    <div class="detail-chip"><span class="chip-label">Gender</span><span class="chip-val">${currentPuppy.gender}</span></div>
+    <div class="detail-chip"><span class="chip-label">Breed</span><span class="chip-val">${currentPuppy.breed}</span></div>
+    <div class="detail-chip"><span class="chip-label">Status</span><span class="chip-val" style="color:var(--success)">Available</span></div>`;
+  document.getElementById('detail-vax').innerHTML = currentPuppy.vaccinations.map(v => `<li>${v}</li>`).join('');
+  document.getElementById('inquiry-success').style.display = 'none';
+  document.getElementById('inquiry-form-fields').style.display = 'block';
+  showPage('detail');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ===== NAVIGATION =====
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  const navEl = document.getElementById('nav-' + name);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  closeNav();
+
+  if (name === 'puppies') filterPuppies();
+  if (name === 'home') renderGrid('home-puppy-grid', puppies.slice(0, 3));
+}
+
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+function closeNav() {
+  document.getElementById('navLinks').classList.remove('open');
+}
+
+function scrollToForm() {
+  document.getElementById('inquiry-form').scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+// ===== FORMS =====
+function submitForm(type) {
+  if (type === 'inquiry') {
+    document.getElementById('inquiry-success').style.display = 'block';
+    document.getElementById('inquiry-form-fields').style.display = 'none';
+  } else {
+    document.getElementById('contact-success').style.display = 'block';
+    document.getElementById('contact-form-fields').style.display = 'none';
+  }
+}
+
+// ===== INIT =====
+renderGrid('home-puppy-grid', puppies.slice(0, 3));
+filterPuppies();
+</script>
+</body>
+</html>
